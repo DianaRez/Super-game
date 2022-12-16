@@ -10,6 +10,10 @@ clock = pygame.time.Clock()
 display=pygame.display.set_mode((display_width, display_height)) # создаём дисплей игры
 pygame.display.set_caption("doodlejump") # пишем заголовок вкладки
 icon = pygame.display.set_icon(pygame.image.load('Лого_МФТИ.png')) # Загружаем иконку
+display.fill([105, 196, 205])
+menu1_back = pygame.image.load('космос.jpg')
+display.blit(menu1_back, (-400, 0))
+pygame.display.update()
 # Переменные
 jumper=pygame.image.load('василий.com.png')
 button_sound = pygame.mixer.Sound('кнопка.wav')
@@ -29,9 +33,9 @@ class Button:
             pygame.draw.rect(display, self.active_color,(x, y, self.width, self.height))
             if click[0] == 1: # польхзователь нажал на левую кнопку мыши
                 pygame.mixer.Sound.play(button_sound)
-                pygame.time.delay(300) # задержка, чтобы звук не звучал несколько раз
+                pygame.time.delay(300)# задержка, чтобы звук не звучал несколько раз
                 if action is not None: # если клавиша нажата
-                    action ()
+                    start_game ()
 
         else:
             pygame.draw.rect(display, self.inactive_color, (x, y, self.width, self.height)) # когда курсор вне кнопки, она начального цвета
@@ -43,6 +47,12 @@ def print_text(message, x, y, font_color = (56, 56, 56), font_type = 'шрифт
     font_type = pygame.font.Font(font_type, font_size)
     text = font_type.render(message, True, font_color)
     display.blit (text, (x,y))
+def start_game():
+    display.blit(menu1_back, (-4000, 0))
+    display.fill ([105,196,205])
+    menu_back = pygame.image.load('солнце.png')
+    display.blit(menu_back, (500, 20))
+    pygame.display.update()
 
 def show_menu():
     menu_back = pygame.image.load('василий.com.png') # загружаем фон
@@ -54,7 +64,7 @@ def show_menu():
                 pygame.quit()
                 quit()
         display.blit(menu_back, (0, 0)) # отображаем фон на дисплее
-        start_button.draw(300, 200, 'Start game') # рисуем кнопку старта
+        start_button.draw(300, 200, 'Start game', start_game) # рисуем кнопку старта
         pygame.display.update() #обновляем дисплей
         clock.tick(60) # создаём задержку
 
