@@ -1,15 +1,11 @@
 import pygame
 import random
 
-<<<<<<< HEAD:папка/платформы.py
+
 from Players import*
 type_player = 'Boy'
-if type_player == 'Girl': # type_player будет у Олеси
-=======
-
 
 if type_player == 'Girl':
->>>>>>> 2c6af0b3ebce50d5cda0b8b0bdfaa5239d1a13c0:папка/platform.py
     player = Girl()
 else:
     player = Boy()
@@ -18,8 +14,6 @@ else:
 class Platforma:
     def __init__(self):
         self.screen = pygame.display.set_mode((800, 600))
-
-        self.green = pygame.draw.rect(self.screen, (0, 0, 0), [400, 500, 70, 10], 0, 2)
 
         pygame.font.init()
         self.score = 0
