@@ -18,6 +18,7 @@ Platform.generatePlatforms()
 running = True
 show = True
 while show:
+    display.fill((67, 134, 120))
     for event in pygame.event.get():
         if event.type == pygame.QUIT: # если нажали на крестик - программа закрывается
             pygame.quit()

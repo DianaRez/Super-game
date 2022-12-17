@@ -18,10 +18,10 @@ class Platforma:
         pygame.font.init()
         self.score = 0
         self.font = pygame.font.SysFont("Arial", 25)
-        self.green = pygame.image.load("халява.png").convert_alpha()
-        self.blue = pygame.image.load("матан.png").convert_alpha()
-        self.red = pygame.image.load("химия.png").convert_alpha()
-        self.red_1 = pygame.image.load("химия_разорванная.png").convert_alpha()
+        self.green = pygame.transform.scale(pygame.image.load("халява.png").convert_alpha(), (150, 40))
+        self.blue = pygame.transform.scale(pygame.image.load("матан.png").convert_alpha(), (150, 40))
+        self.red = pygame.transform.scale(pygame.image.load("химия.png").convert_alpha(), (150, 40))
+        self.red_1 = pygame.transform.scale(pygame.image.load("химия_разорванная.png").convert_alpha(), (150, 40))
 
         self.spring = pygame.image.load("spring.png").convert_alpha()
 

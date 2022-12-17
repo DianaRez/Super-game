@@ -1,5 +1,6 @@
 import pygame
 from pygame.locals import *
+
 class Player:
     def __init__(self):
         self.playerx = 400
@@ -52,9 +53,9 @@ class Player:
 class Boy(Player):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("boy.png")
+        self.image = pygame.transform.scale(pygame.image.load("boy.png"), (200, 200))
 
 class Girl(Player):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("girl.png")
+        self.image = pygame.transform.scale(pygame.image.load("girl.png"), (200, 200))
