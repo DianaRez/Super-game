@@ -1,7 +1,7 @@
 import pygame
 import random
 
-<<<<<<< HEAD:папка/платформы.py
+
 from Players import*
 type_player = 'Boy'
 
