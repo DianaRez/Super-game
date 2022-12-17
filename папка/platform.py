@@ -1,5 +1,7 @@
 import pygame
 
+
+
 if type_player == 'Girl':
     player = Girl()
 else:
