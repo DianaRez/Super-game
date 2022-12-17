@@ -13,7 +13,7 @@ else:
 
 class Platforma:
     def __init__(self):
-        self.screen = pygame.display.set_mode((800, 600))
+        self.screen = pygame.image.load("халява.png").convert_alpha()
 
         pygame.font.init()
         self.score = 0
