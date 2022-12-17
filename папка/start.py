@@ -52,7 +52,6 @@ def print_text(message, x, y, font_color = (56, 56, 56), font_type = 'шрифт
     display.blit (text, (x,y)) # выводим на экран в месте с координатами x и y
 
 def choose_your_fighter():
-    pass
     show_game = True
     hero1_button = Button (120,70)
     hero2_button = Button (150, 70)
