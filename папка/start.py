@@ -11,6 +11,10 @@ pygame.display.set_caption("doodlejump") # пишем заголовок вкл�
 icon = pygame.display.set_icon(pygame.image.load('Лого_МФТИ.png')) # Загружаем иконку
 
 # Переменные
+girl = pygame.image.load('girl.png')
+Girl = pygame.transform.scale(girl, (girl.get_width() // 2,girl.get_height() // 2))
+boy = pygame.image.load('boy.png')
+Boy = pygame.transform.scale(boy, (boy.get_width() // 2, boy.get_height() // 2))
 menu1_back = pygame.image.load('космос.jpg')
 menu2_back = pygame.image.load('василий.com.png')
 display.blit(menu1_back, (-400,0))
@@ -51,7 +55,8 @@ def print_text(message, x, y, font_color = (56, 56, 56), font_type = 'шрифт
     text = font_type.render(message, True, font_color) #Вторым аргументом указывается сглаживание, третьим – цвет текста
     display.blit (text, (x,y)) # выводим на экран в месте с координатами x и y
 
-<<<<<<< HEAD
+def func1():
+    pass
 def choose_your_fighter():
     show_game = True
     hero1_button = Button (120,70)
@@ -68,31 +73,11 @@ def choose_your_fighter():
         hero2_button.draw(500, 450, 'раздолб', func1)
         pygame.display.update()  # обновляем дисплей
         clock.tick(60)  # создаём задержку
-=======
-def set_hero():
-    pass
->>>>>>> a25e5673b5015b9c652e36025d399543ec383acd
 
-
-def start_game():
-    show_game = True
-    while show_game:
-        display.fill([230,34,95])
-        pygame.display.update() #обновляем дисплей
-        clock.tick(60) # создаём задержку
-
-def fighter():
-    show_options = True
-    while show_options:
-        display.fill([23,234,5])
-        pygame.display.update() #обновляем дисплей
-        clock.tick(60) # создаём задержку
-#TODO buttons, choose options, save chosen avatar, exit cycle via "show_options = False"
 
 def show_menu():
 
     start_button = Button (210,65)
-    choose_button = Button(250, 65)
     quit_button = Button (90, 65)
 
     show = True
@@ -102,26 +87,11 @@ def show_menu():
                 pygame.quit()
                 quit()
 
-        start_button.draw(300, 200, 'Start game', start_game)# рисуем кнопку старта
-        choose_button.draw(280, 280, 'choose a hero', fighter)
+        start_button.draw(300, 200, 'Start game', choose_your_fighter)# рисуем кнопку старта
         quit_button.draw(360, 360, 'Quit', quit)
         pygame.display.update() #обновляем дисплей
         clock.tick(60) # создаём задержку
 
-
-
-# def run_game():
-#     game = True
-#     button = Button(125, 50) # Создаём экземляр класса с такими размерами
-#     while game:
-#         button.draw(300, 250, "играть")
-#         pygame.display.flip()
-#         for event in pygame.event.get():
-#             if event.type == pygame.QUIT:
-#                 pygame.quit()
-#                 quit()
-#
-# run_game()
 show_menu()
 pygame.quit()
 quit()
