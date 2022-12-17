@@ -4,12 +4,8 @@ import random
 <<<<<<< HEAD:папка/платформы.py
 from Players import*
 type_player = 'Boy'
-if type_player == 'Girl': # type_player будет у Олеси
-=======
-
 
 if type_player == 'Girl':
->>>>>>> 2c6af0b3ebce50d5cda0b8b0bdfaa5239d1a13c0:папка/platform.py
     player = Girl()
 else:
     player = Boy()
