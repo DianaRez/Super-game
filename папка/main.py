@@ -1,6 +1,6 @@
 import pygame
 pygame.init()
-#  некоторые параметры
+
 display_width = 800
 display_height = 600
 FPS = 60
@@ -15,25 +15,26 @@ from platform import *
 Platform = Platforma()
 clock = pygame.time.Clock()
 Platform.generatePlatforms()
-while True:
-    .screen.fill((255, 255, 255))
-    clock.tick(60)
+running = True
+show = True
+while show:
     for event in pygame.event.get():
-        if event.type == QUIT:
-            sys.exit()
-    if self.playery - self.cameray > 700:
-        self.cameray = 0
-        self.score = 0
-        self.springs = []
-        self.platforms = [[400, 500, 0, 0]]
-        self.generatePlatforms()
-        self.playerx = 400
-        self.playery = 400
-    self.drawGrid()
-    self.drawPlatforms()
-    self.updatePlayer()
-    self.updatePlatforms()
-    self.screen.blit(self.font.render(str(self.score), -1, (0, 0, 0)), (25, 25))
+        if event.type == pygame.QUIT: # если нажали на крестик - программа закрывается
+            pygame.quit()
+            quit()
+    if player.playery - player.cameray > 700:
+        player.cameray = 0
+        Platform.score = 0
+        Platform.springs = []
+        Platform.platforms = [[400, 500, 0, 0]]
+        Platform.generatePlatforms()
+        player.playerx = 400
+        player.playery = 400
+
+    Platform.drawPlatforms()
+    player.updatePlayer()
+    Platform.updatePlatforms()
+    Platform.screen.blit(Platform.font.render(str(Platform.score), -1, (0, 0, 0)), (25, 25))
     pygame.display.flip()
 
 
