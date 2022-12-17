@@ -19,8 +19,6 @@ class Platforma:
     def __init__(self):
         self.screen = pygame.display.set_mode((800, 600))
 
-        self.green = pygame.draw.rect(self.screen, (0, 0, 0), [400, 500, 70, 10], 0, 2)
-
         pygame.font.init()
         self.score = 0
         self.font = pygame.font.SysFont("Arial", 25)
