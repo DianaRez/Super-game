@@ -19,9 +19,9 @@ class Platforma:
         self.score = 0
         self.font = pygame.font.SysFont("Arial", 25)
 
-        self.blue = pygame.image.load("matan.png").convert_alpha()
-        self.red = pygame.image.load("khimia.png").convert_alpha()
-        self.red_1 = pygame.image.load("khimia_разрезанная.png").convert_alpha()
+        self.blue = pygame.image.load("матан.png").convert_alpha()
+        self.red = pygame.image.load("химия.png").convert_alpha()
+        self.red_1 = pygame.image.load("химия_разорванная.png").convert_alpha()
 
         self.spring = pygame.image.load("spring.png").convert_alpha()
 
