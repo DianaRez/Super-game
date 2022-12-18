@@ -63,10 +63,8 @@ def print_text(message, x, y, font_color = (56, 56, 56), font_type = 'шрифт
 from krjgoflwmft import *
 
 def func1():
-    player = Girl()
     StartGame()
 def func2():
-    player = Boy()
     StartGame()
 
 def choose_your_fighter():

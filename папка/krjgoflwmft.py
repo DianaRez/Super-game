@@ -1,22 +1,21 @@
+import random
 from platform import *
 
 def StartGame():
-    # global display
-    #
-    # if type_player == 'Girl':
-    #     player = Girl()
-    # else:
-    #     player = Boy()
+    # player = Girl()
+    
 
     Platform = Platforma()
     clock = pygame.time.Clock()
     Platform.generatePlatforms()
     display_width = 800
     display_height = 600
+    score_last = 0
+    background = (67, 134, 120)
     display = pygame.display.set_mode((display_width, display_height))  # создаём дисплей игры
     show = True
     while show:
-        display.fill((67, 134, 120))
+        display.fill(background)
         Platform.screen.blit(player.image, (player.playerx, player.playery - player.cameray))
         clock.tick(60)
         for event in pygame.event.get():
@@ -31,11 +30,16 @@ def StartGame():
             Platform.generatePlatforms()
             player.playerx = 400
             player.playery = 400
+            score_last = 0
     
         Platform.drawPlatforms()
         player.updatePlayer()
         Platform.updatePlatforms()
         Platform.screen.blit(Platform.font.render(str(Platform.score), -1, (0, 0, 0)), (25, 25))
+        if Platform.score - score_last > 1000:
+            score_last = Platform.score
+            background = (random.randint(1, 255), random.randint(1, 255), random.randint(1, 255))
         pygame.display.flip()
+
 
 # StartGame()
