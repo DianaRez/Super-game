@@ -21,6 +21,7 @@ def StartGame():
     num = 1
     display = pygame.display.set_mode((display_width, display_height))  # создаём дисплей игры
 
+
     def text(message, x, y, font_color=(56, 56, 56), font_type='шрифт.ttf', font_size=30):
         font_type = pygame.font.Font(font_type, font_size)  # создаёт новый объект Font из файла
         text = font_type.render(message, True,
@@ -57,7 +58,7 @@ def StartGame():
         player.updatePlayer()
         Platform.updatePlatforms()
         Platform.screen.blit(Platform.font.render(str(Platform.score), -1, (0, 0, 0)), (25, 25))
-        if Platform.score - score_last > 5000:
+        if Platform.score - score_last > 1000:
             score_last = Platform.score
             background = (random.randint(1, 255), random.randint(1, 255), random.randint(1, 255))
             if num < 5:
