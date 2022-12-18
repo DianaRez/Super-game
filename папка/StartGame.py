@@ -19,6 +19,7 @@ def StartGame():
     score_last = 0
     background = (0, 255, 255)
     num = 1
+    high_score = 0
     display = pygame.display.set_mode((display_width, display_height))  # создаём дисплей игры
 
 
@@ -52,17 +53,23 @@ def StartGame():
             Platform.generatePlatforms()
             player.playerx = 400
             player.playery = 400
+
             score_last = 0
     
         Platform.drawPlatforms()
         player.updatePlayer()
         Platform.updatePlatforms()
-        Platform.screen.blit(Platform.font.render(str(Platform.score), -1, (0, 0, 0)), (25, 25))
+        text('Score:{}  '.format(Platform.score), 5, 10, (0,0,0), 'шрифт.ttf', 20)
+        text('High score:{}  '.format(high_score), 5, 40, (0,0,0), 'шрифт.ttf', 20)
+        # Platform.screen.blit(Platform.font.render(str(Platform.score), -1, (0, 0, 0)), (25, 25))
+
         if Platform.score - score_last > 5000:
             score_last = Platform.score
             background = (random.randint(1, 255), random.randint(1, 255), random.randint(1, 255))
             if num < 8:
                 num += 1
+        if Platform.score > high_score:
+            high_score = Platform.score
         pygame.display.flip()
 
 
