@@ -7,7 +7,7 @@ FPS=60
 clock = pygame.time.Clock()
 
 display=pygame.display.set_mode((display_width, display_height)) # создаём дисплей игры
-pygame.display.set_caption("doodlejump") # пишем заголовок вкладки
+pygame.display.set_caption("SuperPhystech") # пишем заголовок вкладки
 icon = pygame.display.set_icon(pygame.image.load('Лого_МФТИ.png')) # Загружаем иконку
 
 # Переменные
@@ -19,8 +19,8 @@ menu1_back = pygame.image.load('космос.jpg')
 menu2_back = pygame.image.load('василий.com.png')
 display.blit(menu1_back, (-400,0))
 display.blit(menu2_back, (0, 0))
-button_sound = pygame.mixer.Sound('кнопка.wav')
-button_sound1 = pygame.mixer.Sound('клик.wav')
+# button_sound = pygame.mixer.Sound('кнопка.wav')
+button_sound = pygame.mixer.Sound('клик.wav')
 # создадим кнопку play
 class Button:
     def __init__(self, width, height):
@@ -60,7 +60,7 @@ def print_text(message, x, y, font_color = (56, 56, 56), font_type = 'шрифт
     display.blit (text, (x,y)) # выводим на экран в месте с координатами x и y
 
 
-from krjgoflwmft import *
+from StartGame import *
 from platforma import *
 
 def func1():

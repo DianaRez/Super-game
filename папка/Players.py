@@ -54,15 +54,21 @@ class Player:
 class Boy(Player):
     def __init__(self):
         super().__init__()
-
-    def h(self):
-        from 
-        self.image = pygame.transform.scale(pygame.image.load("boy.png"), (100, 100))
-        Sta
-
-class Girl(Player):
-    def __init__(self):
-        super().__init__()
         self.image = pygame.transform.scale(pygame.image.load("girl.png"), (100, 100))
+    def h(self):
+        from StartGame import StartGame
+        self.image = pygame.transform.scale(pygame.image.load("girl.png"), (100, 100))
+        StartGame()
+
+    def g(self):
+        from StartGame import StartGame
+        self.image = pygame.transform.scale(pygame.image.load("boy.png"), (100, 100))
+        StartGame()
+
+
+# class Girl(Player):
+#     def __init__(self):
+#         super().__init__()
+#         self.image = pygame.transform.scale(pygame.image.load("girl.png"), (100, 100))
 
 

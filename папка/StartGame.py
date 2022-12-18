@@ -1,5 +1,5 @@
 import random
-from platform import *
+from platforma import *
 
 import pygame.font
 
@@ -55,4 +55,4 @@ def StartGame():
         pygame.display.flip()
 
 
-StartGame()
+# StartGame()
