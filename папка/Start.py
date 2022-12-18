@@ -82,6 +82,8 @@ def choose_your_fighter():
         display.fill((176, 224, 230))
         display.blit(Girl1, (100,130))
         display.blit(Boy1, (450,130))
+        print_text('Выберите персонажа', 200, 10, (25, 25, 112), 'шрифт.ttf', 40)
+        print_text('(Узнай себя)', 330, 60, (25, 25, 112), 'шрифт.ttf', 25 )
         hero1_button.draw(150, 450, "Ботан", func1)  # рисуем кнопку старта
         hero2_button.draw(475, 450, 'раздолб', func2)
         pygame.display.update()  # обновляем дисплей

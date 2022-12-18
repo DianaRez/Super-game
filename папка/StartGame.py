@@ -35,7 +35,7 @@ def StartGame():
         clock.tick(60)
         if num < 5:
             text('{} курс'.format(num), 250, 200, '#FF1493', 'шрифт.ttf', 100)
-        else:
+        elif num < 8:
             text('Поздравляем, ', 100, 200, '#FF1493', 'шрифт.ttf', 50)
             text('вы окончили физтех!', 80, 300, '#FF1493', 'шрифт.ttf', 50)
 
@@ -61,7 +61,7 @@ def StartGame():
         if Platform.score - score_last > 5000:
             score_last = Platform.score
             background = (random.randint(1, 255), random.randint(1, 255), random.randint(1, 255))
-            if num < 5:
+            if num < 8:
                 num += 1
         pygame.display.flip()
 
