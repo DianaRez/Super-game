@@ -3,12 +3,12 @@ import random
 
 
 from Players import*
-type_player = 'Boy'
-
-if type_player == 'Girl':
-    player = Girl()
-else:
-    player = Boy()
+# type_player = 'Boy'
+# 
+# if type_player == 'Girl':
+#     player = Girl()
+# else:
+player = Boy()
 
 
 class Platforma:

@@ -1,19 +1,31 @@
+import pygame
+pygame.init()
 from platform import *
 
-def StartGame():
-    # global display
-    #
-    # if type_player == 'Girl':
-    #     player = Girl()
-    # else:
-    #     player = Boy()
+def Game():
 
-    Platform = Platforma()
-    clock = pygame.time.Clock()
-    Platform.generatePlatforms()
+
+
+
     display_width = 800
     display_height = 600
-    display = pygame.display.set_mode((display_width, display_height))  # создаём дисплей игры
+    FPS = 60
+
+
+
+    display = pygame.display.set_mode((display_width, display_height)) # создаём дисплей игры
+    pygame.display.set_caption("doodlejump") # пишем заголовок вкладки
+    icon = pygame.display.set_icon(pygame.image.load('Лого_МФТИ.png')) # Загружаем иконку
+
+
+
+
+    Platform = Platforma()
+
+
+    clock = pygame.time.Clock()
+    Platform.generatePlatforms()
+    running = True
     show = True
     while show:
         display.fill((67, 134, 120))
@@ -31,11 +43,11 @@ def StartGame():
             Platform.generatePlatforms()
             player.playerx = 400
             player.playery = 400
-    
+
         Platform.drawPlatforms()
         player.updatePlayer()
         Platform.updatePlatforms()
         Platform.screen.blit(Platform.font.render(str(Platform.score), -1, (0, 0, 0)), (25, 25))
         pygame.display.flip()
 
-# StartGame()
+Game()

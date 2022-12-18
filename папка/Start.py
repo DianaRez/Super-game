@@ -12,9 +12,9 @@ icon = pygame.display.set_icon(pygame.image.load('Лого_МФТИ.png')) # З�
 
 # Переменные
 girl = pygame.image.load('girl.png')
-Girl = pygame.transform.scale(girl, (girl.get_width() // 2,girl.get_height() // 2))
+Girl1 = pygame.transform.scale(girl, (girl.get_width() // 2,girl.get_height() // 2))
 boy = pygame.image.load('boy.png')
-Boy = pygame.transform.scale(boy, (boy.get_width() // 2, boy.get_height() // 2))
+Boy1 = pygame.transform.scale(boy, (boy.get_width() // 2, boy.get_height() // 2))
 menu1_back = pygame.image.load('космос.jpg')
 menu2_back = pygame.image.load('василий.com.png')
 display.blit(menu1_back, (-400,0))
@@ -41,6 +41,10 @@ class Button:
                     if action == quit:
                         pygame.quit()
                         quit()
+                    if action == func1:
+                        func1()
+                    if action == func2:
+                        func2()
                     action()
 
 
@@ -55,8 +59,16 @@ def print_text(message, x, y, font_color = (56, 56, 56), font_type = 'шрифт
     text = font_type.render(message, True, font_color) #Вторым аргументом указывается сглаживание, третьим – цвет текста
     display.blit (text, (x,y)) # выводим на экран в месте с координатами x и y
 
+
+from krjgoflwmft import *
+
 def func1():
-    pass
+    player = Girl()
+    StartGame()
+def func2():
+    player = Boy()
+    StartGame()
+
 def choose_your_fighter():
     show_game = True
     hero1_button = Button (120,70)
@@ -67,10 +79,10 @@ def choose_your_fighter():
                 pygame.quit()
                 quit()
         display.fill((67,134,120))
-        display.blit(Girl, (100,130))
-        display.blit(Boy, (450,130))
+        display.blit(Girl1, (100,130))
+        display.blit(Boy1, (450,130))
         hero1_button.draw(100, 450, "Ботан", func1)  # рисуем кнопку старта
-        hero2_button.draw(500, 450, 'раздолб', func1)
+        hero2_button.draw(500, 450, 'раздолб', func2)
         pygame.display.update()  # обновляем дисплей
         clock.tick(60)  # создаём задержку
 
