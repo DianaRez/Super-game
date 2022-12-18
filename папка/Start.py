@@ -82,8 +82,8 @@ def choose_your_fighter():
         display.fill((176, 224, 230))
         display.blit(Girl1, (100,130))
         display.blit(Boy1, (450,130))
-        hero1_button.draw(100, 450, "Ботан", func1)  # рисуем кнопку старта
-        hero2_button.draw(500, 450, 'раздолб', func2)
+        hero1_button.draw(150, 450, "Ботан", func1)  # рисуем кнопку старта
+        hero2_button.draw(475, 450, 'раздолб', func2)
         pygame.display.update()  # обновляем дисплей
         clock.tick(60)  # создаём задержку
 

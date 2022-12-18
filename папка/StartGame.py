@@ -58,7 +58,7 @@ def StartGame():
         player.updatePlayer()
         Platform.updatePlatforms()
         Platform.screen.blit(Platform.font.render(str(Platform.score), -1, (0, 0, 0)), (25, 25))
-        if Platform.score - score_last > 1000:
+        if Platform.score - score_last > 5000:
             score_last = Platform.score
             background = (random.randint(1, 255), random.randint(1, 255), random.randint(1, 255))
             if num < 5:
