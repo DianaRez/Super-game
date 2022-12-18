@@ -30,7 +30,7 @@ class Platforma:
 
     def updatePlatforms(self):
         for p in self.platforms:
-            rect = pygame.Rect(p[0], p[1], 70 - 10, 10)  # 70-10 это ширина минус 10, 10 это высота
+            rect = pygame.Rect(p[0], p[1], 120, 20)  # 70-10 это ширина минус 10, 10 это высота
             gamer = pygame.Rect(player.playerx, player.playery, player.image.get_width() - 10,
                                 player.image.get_height())  # узнать размеры картинок игроков
             if rect.colliderect(gamer) and player.gravity and player.playery < (
@@ -88,8 +88,8 @@ class Platforma:
             if pygame.Rect(spring[0], spring[1], self.spring.get_width(), self.spring.get_height()).colliderect(
                     pygame.Rect(player.playerx, player.playery, player.image.get_width(),
                                 player.image.get_height())):
-                player.jump = 50
-                player.cameray -= 50
+                player.jump = 30
+                player.cameray -= 30
 
     def generatePlatforms(self):
         on = 600
