@@ -16,7 +16,7 @@ def StartGame():
     display_width = 800
     display_height = 600
     score_last = 0
-    background = (67, 134, 120)
+    background = (0, 255, 255)
     num = 1
     display = pygame.display.set_mode((display_width, display_height))  # создаём дисплей игры
     from Start import print_text
