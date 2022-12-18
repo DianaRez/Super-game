@@ -61,6 +61,8 @@ def print_text(message, x, y, font_color = (56, 56, 56), font_type = 'шрифт
 
 
 from krjgoflwmft import *
+from platform import *
+
 
 def func1():
     StartGame()

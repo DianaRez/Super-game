@@ -1,6 +1,9 @@
 import random
 from platform import *
 
+import pygame.font
+
+
 def StartGame():
     # player = Girl()
     
@@ -13,6 +16,9 @@ def StartGame():
     score_last = 0
     background = (67, 134, 120)
     display = pygame.display.set_mode((display_width, display_height))  # создаём дисплей игры
+    # font = pygame.font.Font('шрифт.ttf', 18)
+    # num = 1
+    # follow = font.render('{} курс'.format(num), 1, (255, 0, 0))
     show = True
     while show:
         display.fill(background)
@@ -23,6 +29,8 @@ def StartGame():
                 pygame.quit()
                 quit()
         if player.playery - player.cameray > 700:
+            # num = 1
+            # display.blit(follow, (700, 0))
             player.cameray = 0
             Platform.score = 0
             Platform.springs = []
@@ -36,10 +44,15 @@ def StartGame():
         player.updatePlayer()
         Platform.updatePlatforms()
         Platform.screen.blit(Platform.font.render(str(Platform.score), -1, (0, 0, 0)), (25, 25))
-        if Platform.score - score_last > 1000:
+        if Platform.score - score_last > 5000:
             score_last = Platform.score
             background = (random.randint(1, 255), random.randint(1, 255), random.randint(1, 255))
+            # while num < 5:
+            #     num += 1
+            #     display.blit(follow, (700, 0))
+
+
         pygame.display.flip()
 
 
-# StartGame()
+StartGame()
