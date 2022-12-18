@@ -6,7 +6,9 @@ import pygame.font
 
 def StartGame():
     # player = Girl()
-    
+    # а вот и музыка
+    pygame.mixer.music.load('delta.wav')
+    pygame.mixer.music.play(-1)
 
     Platform = Platforma()
     clock = pygame.time.Clock()
