@@ -58,6 +58,6 @@ class Boy(Player):
 class Girl(Player):
     def __init__(self):
         super().__init__()
-        self.image = pygame.transform.scale(pygame.image.load("girl.png"), (100, 200))
+        self.image = pygame.transform.scale(pygame.image.load("girl.png"), (100, 100))
 
 
