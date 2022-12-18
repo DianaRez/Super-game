@@ -18,7 +18,7 @@ def StartGame():
     display = pygame.display.set_mode((display_width, display_height))  # создаём дисплей игры
     # font = pygame.font.Font('шрифт.ttf', 18)
     # num = 1
-    # follow = font.render('{} курс'.format(num), 1, (255, 0, 0))
+    # follow = font.render('{} курс'.format(num), (255, 0, 0))
     show = True
     while show:
         display.fill(background)
