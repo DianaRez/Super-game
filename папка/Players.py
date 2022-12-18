@@ -50,10 +50,15 @@ class Player:
             self.cameray -= 10
 
 # делаем два игрока
+
 class Boy(Player):
     def __init__(self):
         super().__init__()
+
+    def h(self):
+        from 
         self.image = pygame.transform.scale(pygame.image.load("boy.png"), (100, 100))
+        Sta
 
 class Girl(Player):
     def __init__(self):

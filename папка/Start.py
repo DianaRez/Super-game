@@ -61,12 +61,13 @@ def print_text(message, x, y, font_color = (56, 56, 56), font_type = 'шрифт
 
 
 from krjgoflwmft import *
-from platform import *
-
+from platforma import *
 
 def func1():
+    player.h()
     StartGame()
 def func2():
+    player.g()
     StartGame()
 
 def choose_your_fighter():
