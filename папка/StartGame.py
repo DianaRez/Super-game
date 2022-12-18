@@ -25,7 +25,11 @@ def StartGame():
         display.fill(background)
         Platform.screen.blit(player.image, (player.playerx, player.playery - player.cameray))
         clock.tick(60)
-        print_text('{} курс'.format(num), 250, 200, '#FF1493', 'шрифт.ttf', 100)
+        if num < 5:
+            print_text('{} курс'.format(num), 250, 200, '#FF1493', 'шрифт.ttf', 100)
+        else:
+            print_text('Поздравляем, ', 100, 200, '#FF1493', 'шрифт.ttf', 50)
+            print_text('вы окончили физтех!', 80, 300, '#FF1493', 'шрифт.ttf', 50)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT: # если нажали на крестик - программа закрывается
@@ -46,15 +50,10 @@ def StartGame():
         player.updatePlayer()
         Platform.updatePlatforms()
         Platform.screen.blit(Platform.font.render(str(Platform.score), -1, (0, 0, 0)), (25, 25))
-        if Platform.score - score_last > 1000:
+        if Platform.score - score_last > 5000:
             score_last = Platform.score
             background = (random.randint(1, 255), random.randint(1, 255), random.randint(1, 255))
-            # if num == 3:
-
-            if num < 3:
-                print_text('{} курс'.format(num + 1), 250, 200, '#FF1493', 'шрифт.ttf', 100)
-                from Start import print_text
-                print_text('Поздравляем, вы закончили физтех!', 250, 200, '#FF1493', 'шрифт.ttf', 50)
+            if num < 5:
                 num += 1
         pygame.display.flip()
 

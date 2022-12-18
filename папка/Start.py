@@ -79,7 +79,7 @@ def choose_your_fighter():
             if event.type == pygame.QUIT: # если нажали на крестик - программа закрывается
                 pygame.quit()
                 quit()
-        display.fill((67,134,120))
+        display.fill((176, 224, 230))
         display.blit(Girl1, (100,130))
         display.blit(Boy1, (450,130))
         hero1_button.draw(100, 450, "Ботан", func1)  # рисуем кнопку старта
